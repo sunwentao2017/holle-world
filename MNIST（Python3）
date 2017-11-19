@@ -105,7 +105,7 @@ correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))
                                             # tf.cast先将数据转换成float，防止求平均不准确。  
                                             # tf.reduce_mean由于只有一个参数，就是上面那组布尔值的平均值。  
 accuracy = tf.reduce_mean(tf.cast(correct_prediction,"float"))  
-                                            # 输出正确率0.913
+                                            # 输出正确率0.9+,为何变化？
 print (sess.run(accuracy,feed_dict={x:mnist.test.images,y_: mnist.test.labels}))   
 
 
